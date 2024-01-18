@@ -1,2 +1,21 @@
 <h1 class="mt-3">Selectors Nested</h1>
 <hr>
+
+<form [formGroup]="myForm">
+
+  <!--Region-->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Region:</label>
+      <select class="form-control">
+        <option value="">-- Select Region --</option>
+      </select>
+    </div>
+  </div>
+
+</form>
+
+<h3>Form</h3>
+<code>
+  {{myForm.value | json}}
+</code>
