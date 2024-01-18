@@ -7,8 +7,9 @@
   <div class="row mb-3">
     <div class="col">
       <label class="form-label">Region:</label>
-      <select class="form-control">
+      <select formControlName="region" class="form-control">
         <option value="">-- Select Region --</option>
+        <option *ngFor="let region of regions" [value]="region">{{region}}</option>
       </select>
     </div>
   </div>
@@ -19,3 +20,6 @@
 <code>
   {{myForm.value | json}}
 </code>
+<p>
+  is form valid {{myForm.valid}}
+</p>
