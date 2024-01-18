@@ -54,8 +54,8 @@ export class SelectorPageComponent implements OnInit{
         switchMap(alphaCode => this.countriesService.getCountryByAlphaCode(alphaCode)),
         tap(() => this.myForm.get('border')?.setValue('')),
         switchMap(country => this.countriesService.getCountryBordersByCodes(country.borders))
-      ).subscribe(counties => {
-        this.borders = counties;
+      ).subscribe(countries => {
+        this.borders = countries;
     })
   }
 }
