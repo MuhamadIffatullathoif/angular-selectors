@@ -50,9 +50,9 @@ export class SelectorPageComponent implements OnInit{
   onCountryChanged(): void {
     this.myForm.get('country')?.valueChanges
       .pipe(
-        tap(() => this.myForm.get('border')?.setValue('')),
         filter(value => value.length > 0),
         switchMap(alphaCode => this.countriesService.getCountryByAlphaCode(alphaCode)),
+        tap(() => this.myForm.get('border')?.setValue('')),
         switchMap(country => this.countriesService.getCountryBordersByCodes(country.borders))
       ).subscribe(counties => {
         this.borders = counties;
